@@ -1,0 +1,23 @@
+$font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+$font-size: 1em;
+$font-weight: 400;
+$line-height: 1.375;
+
+$color-background: rgb(247, 238, 232);
+$color-text: rgb(66, 59, 57);
+
+$color-primary: rgb(218, 88, 29);
+$color-primary-light: lighten($color-primary, 12%);
+$color-primary-dark: darken($color-primary, 12%);
+
+$color-info: rgb(125, 207, 245);
+$color-info-light: lighten($color-info, 23%);
+$color-info-dark: darken($color-info, 20%);
+
+$color-error: rgb(245, 125, 125);
+$color-error-light: lighten($color-error, 23%);
+$color-error-dark: darken($color-error, 20%);
+
+$color-success: rgb(138, 224, 116);
+$color-success-light: lighten($color-success, 23%);
+$color-success-dark: darken($color-success, 20%);

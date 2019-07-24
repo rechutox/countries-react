@@ -1,0 +1,57 @@
+.CountryInfo {
+  display: flex;
+  flex-direction: row;
+  // min-width: 10em;
+
+  .flag {
+    width: 50%;
+    height: 200px;
+    padding: .8em;
+    background-color: $color-background;
+    border-radius: 5px;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .info-table {
+    flex: 1;
+    margin-left: 1em;
+
+    .row {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-gap: 1em;
+      margin-top: .25em;
+      padding-top: .25em;
+      border-top: 1px dashed rgb(221, 221, 221);
+
+      .left {
+        font-weight: bold;
+      }
+
+      &:first-child {
+        border-top: 0;
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    flex-direction: column;
+
+    .flag {
+      width: 100%;
+      height: 160px;
+      margin-bottom: 1em;
+    }
+
+    .info-table {
+      margin-left: 0;
+    }
+  }
+}

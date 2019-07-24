@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after { box-sizing:border-box; }
+
+html { 
+  font-size: 100%;
+  background-color: $color-background;
+}
+
+body{
+  font-family: $font-stack;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  color: $color-text;
+  overflow: hidden;
+}
+
+input {
+  width: 100%;
+  outline: 0;
+}
+
+button,
+input[type=button],
+input[type=submit] {
+  border: 0;
+  outline: 0;
+  background: $color-primary;
+  color: white;
+  padding: .6em 1.2em;
+  line-height: 1;
+  border-radius: 3px;
+  font-size: 1em;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $color-primary-light;
+  }
+
+  &:active {
+    background-color: $color-primary-dark;
+  }
+
+  &[disabled] {
+    cursor: default;
+    background-color: gray;
+  }
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.05;
+}
+h2 {
+  font-size: 2.25em;
+  line-height: 1.25;
+}
+h3 {
+  font-size: 1.75em;
+  line-height: 1.25;
+}
+h4 {
+  font-size: 1.125em;
+  line-height: 1.22222;
+}
+
+figure,
+img {
+  margin: 0;
+  padding: 0;
+}
