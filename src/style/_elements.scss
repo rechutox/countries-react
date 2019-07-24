@@ -1,13 +1,15 @@
 *,
 *::before,
-*::after { box-sizing:border-box; }
+*::after {
+  box-sizing: border-box;
+}
 
-html { 
+html {
   font-size: 100%;
   background-color: $color-background;
 }
 
-body{
+body {
   font-family: $font-stack;
   font-size: $font-size;
   font-weight: $font-weight;
@@ -19,16 +21,18 @@ body{
 input {
   width: 100%;
   outline: 0;
+  font-family: $font-stack;
 }
 
 button,
-input[type=button],
-input[type=submit] {
+input[type="button"],
+input[type="submit"] {
   border: 0;
   outline: 0;
   background: $color-primary;
+  font-family: $font-stack;
   color: white;
-  padding: .6em 1.2em;
+  padding: 0.6em 1.2em;
   line-height: 1;
   border-radius: 3px;
   font-size: 1em;

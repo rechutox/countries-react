@@ -25,7 +25,10 @@ const API = {
 
     const url = `name/${query}`;
 
-    return io.get(url, { limit: 1000 }).then(response => response.data);
+    return io
+      .get(url, { limit: 1000 })
+      .then(response => response.data)
+      .catch(error => []); // Swallow the error
   },
 
   /**
@@ -43,18 +46,24 @@ const API = {
   getAvailableCountries() {
     const url = `all?fields=name;nativeName;flag;alpha3Code`;
 
-    return io.get(url).then(response => response.data);
+    return io
+      .get(url)
+      .then(response => response.data)
+      .catch(error => []);
   },
 
   /**
    * Fetch all country data
    * @param {string} alpha3Code
-   * @return {object} The data
+   * @return {object|null} The data
    */
   getCountryInfo(alpha3Code) {
     const url = `alpha/${alpha3Code}`;
 
-    return io.get(url).then(response => response.data);
+    return io
+      .get(url)
+      .then(response => response.data)
+      .catch(error => null);
   },
 };
 

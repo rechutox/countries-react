@@ -28,8 +28,8 @@ about it. It fetch the information from the [REST Countries API](https://restcou
 
 ## 👻 Known issues
 
-- In the countries list, sometimes the flag will get misaligned.
-- The API will throw a 404 if the search query has no matches.
+- ~~In the countries list, sometimes the flag will get misaligned.~~ FIXED.
+- ~~The API will throw a 404 if the search query has no matches.
   This will raise an error notification and scare my poor users.
   Possible fix: Disable the notification (B-but, what if we
-  get a real error??).
+  get a real error??).~~. FIXED.

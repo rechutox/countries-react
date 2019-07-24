@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap");
+
 .App {
   position: absolute;
   top: 0;
@@ -10,12 +12,15 @@
     margin: 40px auto;
     padding: 0 1em;
     max-width: 61.75em; /* 988px / 16px = 61.75em */
-    
+
     .title {
+      font-family: "Fredericka the Great", cursive;
+      font-weight: 300;
+      font-size: 4em;
       text-align: center;
-      text-shadow: 0 2px 2px rgba(0,0,0,0.25);
+      text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
     }
-  
+
     .searchbar {
       margin-bottom: 2em;
       text-align: center;
@@ -26,16 +31,12 @@
       padding: 0 1em;
       border: 0;
       border-radius: 4px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-  
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+
       &:hover,
       &:focus {
         box-shadow: 0 2px 5px rgba(146, 46, 0, 0.5);
       }
     }
-  }
-
-  &.has-modal {
-    overflow: hidden;
   }
 }

@@ -3,7 +3,6 @@ import { debounce } from "lodash";
 import CountryList from "./CountryList";
 import CountryInfo from "./CountryInfo";
 import Modal from "./Modal";
-import Notification from "./Notification";
 import api from "../api/countries";
 
 class App extends React.Component {
@@ -24,35 +23,27 @@ class App extends React.Component {
   async searchCountries() {
     const query = this.state.searchQuery;
     if (query.length === 0) return;
-    try {
-      const searchResults = await api.searchCountry(query);
-      this.setState({
-        ...this.state,
-        searchResults,
-        hasError: false,
-      });
-    } catch (error) {
-      this._showError(error);
-    }
+    const searchResults = await api.searchCountry(query);
+    this.setState({
+      ...this.state,
+      searchResults,
+      hasError: false,
+    });
   }
 
   async getCountryInfo(callback = () => {}) {
     const query = this.state.selectedCountry;
     if (query.length === 0) return;
-    try {
-      const countryData = await api.getCountryInfo(query);
+    const countryData = await api.getCountryInfo(query);
 
-      this.setState(
-        {
-          ...this.state,
-          countryData,
-          hasError: false,
-        },
-        callback,
-      );
-    } catch (error) {
-      this._showError(error);
-    }
+    this.setState(
+      {
+        ...this.state,
+        countryData,
+        hasError: false,
+      },
+      callback
+    );
   }
 
   _showError(error) {
@@ -74,11 +65,13 @@ class App extends React.Component {
   };
 
   _onInputChange = e => {
+    const value = e.target.value;
+    if (!/^[a-zA-Z]*$/.test(value)) return; // Accept only letters
     this.setState(
       {
-        searchQuery: e.target.value,
+        searchQuery: value,
       },
-      this.debouncedSearchCountries,
+      this.debouncedSearchCountries
     );
   };
 
@@ -92,21 +85,17 @@ class App extends React.Component {
         this.getCountryInfo(() => {
           this._toggleModal(true);
         });
-      },
+      }
     );
   };
 
   render() {
     const { searchQuery, searchResults, countryData, modalOpen } = this.state;
 
-    const notification = this.state.hasError && (
-      <Notification type="error" message={this.state.errorMessage} />
-    );
-
     return (
-      <div className={"App" + (modalOpen ? " has-modal" : "")}>
+      <div className="App">
         <div className="wrapper">
-          <h1 className="title">..:: Countries ::..</h1>
+          <h1 className="title">~ Countries ~</h1>
 
           <input
             spellCheck="false"
@@ -117,8 +106,6 @@ class App extends React.Component {
             onChange={this._onInputChange}
             value={searchQuery}
           />
-
-          {notification}
 
           <CountryList items={searchResults} onSelect={this._onCountrySelect} />
 
