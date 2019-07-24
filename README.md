@@ -13,7 +13,7 @@ about it. It fetch the information from the [REST Countries API](https://restcou
 - Big, fat search-box
 - Get results as you type
 - Flags!
-- Inaccurate and unuseful error messages!
+- ~~Inaccurate and unuseful error messages!~~ Nope.
 
 ## 🚀 The future
 
@@ -21,7 +21,7 @@ about it. It fetch the information from the [REST Countries API](https://restcou
 
 ## 🏗 Dependencies
 
-- React and friends
+- React and some friends
 - Axios
 - Lodash
 - Scss
