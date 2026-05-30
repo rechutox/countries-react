@@ -5,7 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "axios": "0.31.1",
+    "axios": "0.32.0",
     "lodash": "4.17.19",
     "materialize-css": "^1.0.0-rc.2",
     "node-sass": "^4.12.0",
